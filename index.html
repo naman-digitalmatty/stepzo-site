@@ -119,8 +119,8 @@
   // to the page that now holds that section. The first id in each list is the page itself.
   (function () {
     var pages = {
-      "privacy.html": ["privacy", "who", "collect", "on-device", "sharing", "retention", "rights", "security", "children", "location", "changes", "contact"],
-      "delete-account.html": ["delete-account", "delete-by-email", "what-happens"]
+      "privacy": ["privacy", "who", "collect", "on-device", "sharing", "retention", "rights", "security", "children", "location", "changes", "contact"],
+      "delete-account": ["delete-account", "delete-by-email", "what-happens"]
     };
     var id = location.hash.slice(1);
     for (var page in pages) {
@@ -138,8 +138,8 @@
   <div class="wrap">
     <a class="brand" href="./">Stepzo</a>
     <nav aria-label="Pages">
-      <a href="privacy.html">Privacy policy</a>
-      <a href="delete-account.html">Delete account</a>
+      <a href="privacy">Privacy policy</a>
+      <a href="delete-account">Delete account</a>
     </nav>
   </div>
 </header>
@@ -152,11 +152,11 @@
   </div>
 
   <div class="pages">
-    <a class="card" href="privacy.html">
+    <a class="card" href="privacy">
       <h2>Privacy policy</h2>
       <p>What we collect, why we need it, who we share it with and the choices you have.</p>
     </a>
-    <a class="card" href="delete-account.html">
+    <a class="card" href="delete-account">
       <h2>Delete your account</h2>
       <p>How to request deletion, and what is deleted or kept.</p>
     </a>
@@ -166,7 +166,7 @@
 
 <footer>
   <div class="wrap">
-    <p>© 2026 Digital Matty · <a href="privacy.html">Privacy policy</a> · <a href="delete-account.html">Delete account</a></p>
+    <p>© 2026 Digital Matty · <a href="privacy">Privacy policy</a> · <a href="delete-account">Delete account</a></p>
   </div>
 </footer>
 
