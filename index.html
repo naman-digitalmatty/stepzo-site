@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy &amp; Account Deletion · Stepzo</title>
+<title>Privacy &amp; Your Data · Stepzo</title>
 <meta name="description" content="What Stepzo does with your data, and how to delete your Stepzo account and everything linked to it.">
 <meta name="color-scheme" content="light dark">
 <style>
@@ -79,69 +79,25 @@
     font-size: 0.9rem; font-weight: 600; white-space: nowrap;
     color: var(--text-muted); text-decoration: none;
   }
-  .topbar nav a:hover { background: var(--surface-muted); color: var(--text); }
+  .topbar nav a:hover, .topbar nav a[aria-current="page"] { background: var(--surface-muted); color: var(--text); }
 
   /* ---------- Headings ---------- */
-  h1, h2, h3, h4 { line-height: 1.2; text-wrap: balance; margin: 0; }
+  h1, h2 { line-height: 1.2; text-wrap: balance; margin: 0; }
   h1 { font-size: clamp(2rem, 6vw, 2.75rem); letter-spacing: -0.02em; }
-  h2 { font-size: clamp(1.6rem, 4.5vw, 2rem); letter-spacing: -0.015em; }
-  h3 { font-size: 1.2rem; margin: 2.5rem 0 0.7rem; }
-  h4 { font-size: 1rem; margin: 0 0 0.6rem; }
+  h2 { font-size: 1.2rem; margin: 2.5rem 0 0.7rem; }
   .lead { font-size: 1.15rem; color: var(--text-muted); }
-  .meta { font-size: 0.9rem; color: var(--text-muted); }
 
   .intro { padding: 3rem 0 0.5rem; }
   .intro h1 { margin-bottom: 0.9rem; }
-  .part { padding: 2.5rem 0 1rem; border-top: 1px solid var(--border); margin-top: 2rem; }
-  .part > h2 { margin-bottom: 0.9rem; }
 
-  /* ---------- Cards and callouts ---------- */
+  /* ---------- One card per page ---------- */
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.35rem; margin-bottom: 1.25rem; }
   .card > :last-child { margin-bottom: 0; }
-  .note { border-left: 4px solid var(--warm); background: var(--surface-muted); border-radius: 0 var(--radius) var(--radius) 0; padding: 1rem 1.2rem; margin-bottom: 1.25rem; }
-  .note > :last-child { margin-bottom: 0; }
-  .ticks { list-style: none; padding: 0; }
-  .ticks li { position: relative; padding-left: 1.7rem; }
-  .ticks li::before { content: "✓"; position: absolute; left: 0; font-weight: 700; color: var(--success); }
-
-  /* ---------- Policy: contents + numbered sections ---------- */
-  .toc ol { columns: 2; column-gap: 2rem; margin: 0; padding-left: 1.4rem; font-size: 0.95rem; }
-  .toc li { break-inside: avoid; }
-  .policy { counter-reset: sec; }
-  .policy section > h3::before { counter-increment: sec; content: counter(sec) ". "; color: var(--text-muted); font-weight: 600; }
-
-  /* Data table: a real table on wide screens, stacked rows on phones */
-  .data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-  .data-table th, .data-table td { text-align: left; vertical-align: top; padding: 0.75rem 0.9rem 0.75rem 0; border-top: 1px solid var(--border); }
-  .data-table thead th { border-top: 0; font-size: 0.75rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
-  .data-table tbody th { width: 24%; font-weight: 650; }
-  .data-table td:last-child { width: 32%; padding-right: 0; color: var(--text-muted); }
-
-  /* Providers and retention: term on the left, detail on the right */
-  .pairs { display: grid; grid-template-columns: 11rem 1fr; }
-  .pairs dt, .pairs dd { margin: 0; padding: 0.7rem 0; border-top: 1px solid var(--border); }
-  .pairs dt { font-weight: 650; padding-right: 1rem; }
-  .pairs dd { color: var(--text-muted); }
-
-  /* ---------- Delete account ---------- */
-  .steps { list-style: none; padding: 0; counter-reset: step; }
-  .steps li { counter-increment: step; position: relative; padding: 0.25rem 0 0.25rem 3rem; margin-bottom: 0.7rem; min-height: 2.2rem; }
-  .steps li::before {
-    content: counter(step);
-    position: absolute; left: 0; top: 0;
-    width: 2.1rem; height: 2.1rem; border-radius: 50%;
-    display: grid; place-items: center;
-    background: var(--primary); color: var(--on-primary);
-    font-weight: 700; font-size: 0.95rem;
-  }
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .split .card { margin-bottom: 0; }
-  .split h4 { display: flex; align-items: center; gap: 0.5rem; }
-  .split h4::before { content: ""; width: 0.6rem; height: 0.6rem; border-radius: 50%; }
-  .gone h4::before { background: var(--danger); }
-  .kept h4::before { background: var(--text-muted); }
-  .split ul { font-size: 0.95rem; }
-  .split + * { margin-top: 1.25rem; }
+  .pages { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+  .pages a { margin-bottom: 0; color: inherit; text-decoration: none; }
+  .pages a:hover { border-color: var(--primary); }
+  .pages h2 { margin: 0 0 0.4rem; color: var(--primary); }
+  .pages p { font-size: 0.95rem; color: var(--text-muted); }
 
   footer { margin-top: 3rem; padding: 2rem 0 3rem; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--text-muted); }
   footer p { margin: 0; }
@@ -149,31 +105,30 @@
   /* ---------- Phones ---------- */
   @media (max-width: 40rem) {
     .topbar nav a { padding: 0.4rem 0.55rem; font-size: 0.85rem; }
-    .toc ol { columns: 1; }
-    .split { grid-template-columns: 1fr; }
-    .pairs { grid-template-columns: 1fr; }
-    .pairs dt { padding-bottom: 0; }
-    .pairs dd { border-top: 0; padding-top: 0.15rem; }
-
-    .data-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-    .data-table tr { display: block; padding: 0.85rem 0; border-top: 1px solid var(--border); }
-    .data-table th, .data-table td { display: block; width: auto !important; padding: 0; border: 0; }
-    .data-table tbody th { font-size: 1rem; margin-bottom: 0.25rem; }
-    .data-table td { margin-top: 0.45rem; }
-    .data-table td::before {
-      content: attr(data-label); display: block;
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
-      color: var(--text-muted);
-    }
-    .data-table td:last-child { color: var(--text); }
+    .pages { grid-template-columns: 1fr; }
   }
 
   @media print {
     .topbar, .skip { display: none; }
     body { background: #fff; color: #000; font-size: 11pt; }
-    .card, .note { break-inside: avoid; }
+    .card { break-inside: avoid; }
   }
 </style>
+<script>
+  // This used to be one page. Send old links such as /#delete-account or /#collect
+  // to the page that now holds that section. The first id in each list is the page itself.
+  (function () {
+    var pages = {
+      "privacy/": ["privacy", "who", "collect", "on-device", "sharing", "retention", "rights", "security", "children", "location", "changes", "contact"],
+      "delete-account/": ["delete-account", "delete-by-email", "what-happens"]
+    };
+    var id = location.hash.slice(1);
+    for (var page in pages) {
+      var i = pages[page].indexOf(id);
+      if (i > -1) location.replace(page + (i ? "#" + id : ""));
+    }
+  })();
+</script>
 </head>
 <body>
 
@@ -181,254 +136,37 @@
 
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="#top">Stepzo</a>
-    <nav aria-label="Sections">
-      <a href="#privacy">Privacy policy</a>
-      <a href="#delete-account">Delete account</a>
+    <a class="brand" href="./">Stepzo</a>
+    <nav aria-label="Pages">
+      <a href="privacy/">Privacy policy</a>
+      <a href="delete-account/">Delete account</a>
     </nav>
   </div>
 </header>
 
 <main id="main" class="wrap">
 
-  <div class="intro" id="top">
+  <div class="intro">
     <h1>Privacy &amp; your data</h1>
     <p class="lead">What Stepzo does with your data, and how to delete your account.</p>
-    <p class="meta">Last updated: 12 October 2026</p>
   </div>
 
-  <!-- ================= PRIVACY POLICY ================= -->
-  <article class="part policy" id="privacy">
-    <h2>Privacy policy</h2>
-
-    <div class="card">
-      <h4>The short version</h4>
-      <ul class="ticks">
-        <li>Stepzo works without an account. Until you sign in, your routines stay on your phone.</li>
-        <li>If you create an account, we store your routines and history so they sync between your devices.</li>
-        <li>There are no ads, and we never sell your data.</li>
-        <li>You can export or <a href="#delete-account">delete everything</a> whenever you like.</li>
-      </ul>
-    </div>
-
-    <nav class="toc card" aria-label="Privacy policy contents">
-      <h4>In this policy</h4>
-      <ol>
-        <li><a href="#who">Who we are</a></li>
-        <li><a href="#collect">What we collect</a></li>
-        <li><a href="#on-device">What stays on your phone</a></li>
-        <li><a href="#sharing">Who we share data with</a></li>
-        <li><a href="#retention">How long we keep it</a></li>
-        <li><a href="#rights">Your choices and rights</a></li>
-        <li><a href="#security">How we protect it</a></li>
-        <li><a href="#children">Children</a></li>
-        <li><a href="#location">Where your data is processed</a></li>
-        <li><a href="#changes">Changes to this policy</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ol>
-    </nav>
-
-    <section id="who">
-      <h3>Who we are</h3>
-      <p>Stepzo is an app from Digital Matty (“we”, “us”). We decide how the data described on this page is used. If you have a question about your data, email <a href="mailto:services@digitalmatty.com">services@digitalmatty.com</a>.</p>
-    </section>
-
-    <section id="collect">
-      <h3>What we collect</h3>
-      <p>We collect only what the app needs to work. Almost all of it exists only if you create an account.</p>
-      <table class="data-table">
-        <thead>
-          <tr><th scope="col">Data</th><th scope="col">What it includes</th><th scope="col">Why we need it</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Account</th>
-            <td data-label="What it includes">Email address, password (stored only as a one-way hash), account ID and sign-up date.</td>
-            <td data-label="Why we need it">To sign you in and keep your account secure.</td>
-          </tr>
-          <tr>
-            <th scope="row">Profile</th>
-            <td data-label="What it includes">Optional display name, avatar emoji and time zone.</td>
-            <td data-label="Why we need it">To show you in focus rooms and to time things for where you live.</td>
-          </tr>
-          <tr>
-            <th scope="row">Routines</th>
-            <td data-label="What it includes">Routine names, icons, colours and reminder times; step titles and durations.</td>
-            <td data-label="Why we need it">To back up your routines and sync them between your devices.</td>
-          </tr>
-          <tr>
-            <th scope="row">History</th>
-            <td data-label="What it includes">When you started and finished a routine, how many steps you completed or skipped, and extra time you added.</td>
-            <td data-label="Why we need it">To show your progress and weekly summary.</td>
-          </tr>
-          <tr>
-            <th scope="row">Settings</th>
-            <td data-label="What it includes">Your sound, vibration, reminder and notification preferences.</td>
-            <td data-label="Why we need it">To keep the app set up the same way on each device.</td>
-          </tr>
-          <tr>
-            <th scope="row">Focus rooms</th>
-            <td data-label="What it includes">Rooms you follow or create, when you join and leave a session, and reports you send about other people.</td>
-            <td data-label="Why we need it">To run focus rooms and keep them safe.</td>
-          </tr>
-          <tr>
-            <th scope="row">Purchases</th>
-            <td data-label="What it includes">Whether Pro is active, which product you bought, when it expires and the App Store or Google Play reference for that purchase. We never receive your card details.</td>
-            <td data-label="Why we need it">To unlock the features you paid for.</td>
-          </tr>
-          <tr>
-            <th scope="row">Device</th>
-            <td data-label="What it includes">Whether you use iOS or Android, a push notification token, the app version and when the app was last active.</td>
-            <td data-label="Why we need it">To send the notifications you have turned on.</td>
-          </tr>
-          <tr>
-            <th scope="row">Diagnostics</th>
-            <td data-label="What it includes">Crash reports and anonymous usage events such as “routine started”. They never contain routine names or anything you type, and they are not linked to your account.</td>
-            <td data-label="Why we need it">To fix bugs and improve the app. You can turn usage data off.</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>We don’t ask about your health or any diagnosis, and we don’t collect your contacts, photos or location.</p>
-    </section>
-
-    <section id="on-device">
-      <h3>What stays on your phone</h3>
-      <p>You can build routines, run the timer, set reminders and see your progress without signing in. In that case your data is saved only on your device and is never sent to us. Reminders are scheduled by your phone itself.</p>
-      <p>When you sign out, you choose whether to keep your routines on the phone or remove them.</p>
-    </section>
-
-    <section id="sharing">
-      <h3>Who we share data with</h3>
-      <p>We don’t sell your data and we don’t share it for advertising. We share it only with the services that help us run Stepzo, including:</p>
-      <dl class="pairs">
-        <dt>Supabase</dt>
-        <dd>Hosts our database, sign-in and servers. Holds all of your account data.</dd>
-        <dt>Email delivery</dt>
-        <dd>Sends account emails such as password resets. Receives your email address.</dd>
-      </dl>
-      <p><strong>Other people in focus rooms.</strong> Focus rooms have no chat. People in the same room can see your display name, your avatar emoji, a preset status and any reactions you send. They can’t see your routines, your history or your email address.</p>
-      <p>We may also disclose data when the law requires it, or when it is needed to protect the safety of our users.</p>
-    </section>
-
-    <section id="retention">
-      <h3>How long we keep it</h3>
-      <dl class="pairs">
-        <dt>Account data</dt>
-        <dd>Until you delete your account.</dd>
-        <dt>Deleted routines and steps</dt>
-        <dd>They stay marked as deleted for up to 90 days so your other devices can sync the change. After that they are erased.</dd>
-        <dt>Focus room sessions</dt>
-        <dd>Erased about 30 days after they end, unless they are part of your own history.</dd>
-        <dt>Abuse-prevention counters</dt>
-        <dd>Erased within one day.</dd>
-        <dt>Backups</dt>
-        <dd>Overwritten within 30 days.</dd>
-      </dl>
-    </section>
-
-    <section id="rights">
-      <h3>Your choices and rights</h3>
-      <ul>
-        <li><strong>Get a copy.</strong> In the app, go to Settings › Manage account › Export my data. You get everything as one file.</li>
-        <li><strong>Correct it.</strong> Edit your routines and display name in the app at any time.</li>
-        <li><strong>Delete it.</strong> See <a href="#delete-account">Delete your account</a> below.</li>
-        <li><strong>Turn off usage data.</strong> Go to Settings › Privacy › Share anonymous usage data.</li>
-        <li><strong>Control notifications.</strong> Change them in Settings, or in your phone’s own settings.</li>
-      </ul>
-      <p>Depending on where you live, you may also have the right to object to or limit how we use your data, to move it to another service, and to complain to your local data protection authority. To use any of these rights, email <a href="mailto:services@digitalmatty.com">services@digitalmatty.com</a>. We reply within 30 days.</p>
-      <p>We use your data to provide the service you asked for, to keep it secure and to improve it. Where the law requires your consent, we ask for it first.</p>
-    </section>
-
-    <section id="security">
-      <h3>How we protect it</h3>
-      <ul>
-        <li>Data travels between the app and our servers over encrypted connections.</li>
-        <li>Each account can read only its own data. The database itself enforces this.</li>
-        <li>Passwords are stored only as a one-way hash.</li>
-        <li>The keys for our providers are kept on our servers, never inside the app.</li>
-      </ul>
-      <p>No system is completely secure. If we learn of a breach that affects you, we will tell you as the law requires.</p>
-    </section>
-
-    <section id="children">
-      <h3>Children</h3>
-      <p>Stepzo is made for adults. It is not intended for children under 13, or under the minimum age in your country, and we don’t knowingly collect their data. If you believe a child has given us data, email us and we will delete it.</p>
-    </section>
-
-    <section id="location">
-      <h3>Where your data is processed</h3>
-      <p>Our database is hosted by Supabase on Amazon Web Services in Singapore. Some of the providers listed above process data in other countries, including the United States. When data moves between countries, we rely on the safeguards those providers offer in their data processing terms.</p>
-    </section>
-
-    <section id="changes">
-      <h3>Changes to this policy</h3>
-      <p>When we change this policy, we update the date at the top of this page. If a change is significant, we will also let you know in the app or by email.</p>
-    </section>
-
-    <section id="contact">
-      <h3>Contact</h3>
-      <p>Digital Matty<br>
-      <a href="mailto:services@digitalmatty.com">services@digitalmatty.com</a></p>
-    </section>
-  </article>
-
-  <!-- ================= DELETE ACCOUNT ================= -->
-  <article class="part" id="delete-account">
-    <h2>Delete your Stepzo account</h2>
-    <p class="lead">You can ask us to delete your Stepzo account, and the data linked to it, at any time. Stepzo is published by Digital Matty.</p>
-
-    <h3 id="delete-by-email">How to request deletion</h3>
-    <p>Send us an email. You don’t need to have the app installed.</p>
-    <div class="card">
-      <ol class="steps">
-        <li>Email <a href="mailto:services@digitalmatty.com?subject=Delete%20my%20Stepzo%20account">services@digitalmatty.com</a> from the address you signed up with.</li>
-        <li>Use the subject <strong>Delete my Stepzo account</strong>.</li>
-        <li>We may reply to confirm the request really comes from you.</li>
-      </ol>
-      <p class="meta">Deletion can’t be undone.</p>
-    </div>
-
-    <h3 id="what-happens">What is deleted, and what is kept</h3>
-    <div class="split">
-      <div class="card gone">
-        <h4>Deleted for good</h4>
-        <ul>
-          <li>Your account: email address and password</li>
-          <li>Your profile: display name and avatar</li>
-          <li>All routines, steps and reminder times</li>
-          <li>Your history and progress</li>
-          <li>Your settings</li>
-          <li>Your devices and push notification tokens</li>
-          <li>Focus room activity, private rooms you created and reports you sent</li>
-        </ul>
-      </div>
-      <div class="card kept">
-        <h4>Kept for a limited time</h4>
-        <ul>
-          <li><strong>Backups:</strong> deleted data can remain in encrypted backups for up to 30 days, until they are overwritten.</li>
-          <li><strong>Server logs:</strong> technical logs can contain your account ID. They expire on their own within 90 days.</li>
-          <li><strong>Purchase records:</strong> Apple or Google keep the receipts for purchases made through their stores, under their own policies.</li>
-          <li><strong>Anonymous data:</strong> usage statistics and crash reports that were never linked to your account.</li>
-        </ul>
-      </div>
-    </div>
-
-    <p>Routines saved on your phone stay there until you remove them or uninstall the app.</p>
-
-    <div class="note">
-      <p><strong>Deleting your account does not cancel a subscription.</strong> Subscriptions are billed by Apple or Google, so cancel there as well:</p>
-      <ul>
-        <li><strong>iPhone:</strong> Settings › your name › Subscriptions.</li>
-        <li><strong>Android:</strong> Google Play › profile picture › Payments and subscriptions › Subscriptions.</li>
-      </ul>
-    </div>
-  </article>
+  <div class="pages">
+    <a class="card" href="privacy/">
+      <h2>Privacy policy</h2>
+      <p>What we collect, why we need it, who we share it with and the choices you have.</p>
+    </a>
+    <a class="card" href="delete-account/">
+      <h2>Delete your account</h2>
+      <p>How to request deletion, and what is deleted or kept.</p>
+    </a>
+  </div>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <p>© 2026 Digital Matty · <a href="#privacy">Privacy policy</a> · <a href="#delete-account">Delete account</a></p>
+    <p>© 2026 Digital Matty · <a href="privacy/">Privacy policy</a> · <a href="delete-account/">Delete account</a></p>
   </div>
 </footer>
 
